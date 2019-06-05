@@ -29,13 +29,17 @@ def merge( arrA, arrB ):
 def merge_sort( arr ):
     # TO-DO
     # divide and conquer
+
     if len(arr) == 1:
         return arr
-
+    #divides the array in half and will repeat loop to divide arrays until only len of 1 is left
     middle = len(arr) / 2
+    #splits left side of array and break it down again until only one element
     left = merge_sort(arr[:middle])
+    #splits right side of array and break it down again until only one element
     right = merge_sort(arr[middle:])
 
+    #merges each element after being sorted
     return merge(left, right)
 
 
